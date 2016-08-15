@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:weightSum="100"
+    tools:context="com.example.siddhartha.fundmanagertry.MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+        android:layout_weight="90"
+        android:background="#757575">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="7dp">
+            <ImageView
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_alignParentRight="true"
+                android:clickable="true"
+                android:src="@drawable/plus"
+                android:id="@+id/ivPlus" />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="10">
+    <LinearLayout
+        android:id="@+id/llFundScroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/rlFundCard"
+            android:layout_width="match_parent"
+            android:layout_height="110dp"
+            android:padding="10dp"
+            android:background="@drawable/card">
+
+            <TextView
+                android:id="@+id/fName1"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:text="Fund Name 1"
+                android:textSize="35dp"
+                android:longClickable="true"
+                android:textColor="#000000" />
+
+            <TextView
+                android:id="@+id/fDate1"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:text="Jul 7"
+                android:layout_alignParentRight="true"
+                android:textSize="20dp"
+                android:padding="8dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:orientation="horizontal"
+                android:weightSum="100"
+                android:layout_alignParentBottom="true">
+                <Button
+                    android:id="@+id/bDetails1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="45dp"
+                    android:layout_weight="60"
+                    android:text="Details"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center|center_vertical"
+                    android:textColor="#000000"
+                    android:textSize="15dp" />
+                <Spinner
+                    android:id="@+id/sAmount1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="45dp"
+                    android:layout_weight="40"
+                    android:spinnerMode="dialog"
+                    android:layout_gravity="center_vertical"
+                    android:textAlignment="textEnd" />
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

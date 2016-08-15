@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:padding="10dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:weightSum="10"
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="7"
+            android:text="Name:"
+            android:textSize="20dp"
+            android:textColor="#000000"/>
+
+        <EditText
+            android:id="@+id/etFundName"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:textSize="20dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:weightSum="10"
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="7"
+            android:text="Amount:"
+            android:textSize="20dp"
+            android:textColor="#000000"/>
+
+        <EditText
+            android:id="@+id/etFundAmount"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:textSize="20dp"
+            android:inputType="number"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:weightSum="100"
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Spinner
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:layout_weight="35"
+            android:spinnerMode="dropdown"
+            android:id="@+id/sDayF">
+
+        </Spinner>
+
+        <Spinner
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:layout_weight="35"
+            android:spinnerMode="dropdown"
+            android:id="@+id/sMonF">
+
+        </Spinner>
+
+        <Spinner
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:layout_weight="30"
+            android:spinnerMode="dropdown"
+            android:id="@+id/sYearF">
+
+        </Spinner>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/bSubmitFund"
+        android:layout_width="110dp"
+        android:layout_height="55dp"
+        android:layout_gravity="center"
+        android:text="Submit"
+        android:textSize="15dp"/>
+
+</LinearLayout>

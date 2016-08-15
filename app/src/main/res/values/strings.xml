@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Fund Manager Try</string>
+    <string name="title_activity_fund_details">FundDetails</string>
+</resources>

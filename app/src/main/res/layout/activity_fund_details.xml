@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="100"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.siddhartha.fundmanagertry.FundDetails">
+
+    <TextView
+        android:id="@+id/tvName"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="23"
+        android:text="Fund Name"
+        android:textAlignment="center"
+        android:textSize="35dp"
+        android:textColor="#000000"
+        android:gravity="center_vertical" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="23"
+        android:padding="5dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Initial Amount:"
+            android:textSize="20dp"
+            android:textColor="#000000"
+            android:layout_alignParentStart="true"
+            android:gravity="center_vertical" />
+
+        <Button
+            android:id="@+id/bInitialAmount"
+            android:layout_width="150dp"
+            android:layout_height="match_parent"
+            android:clickable="false"
+            android:longClickable="true"
+            android:text="100000"
+            android:textSize="18dp"
+            android:layout_alignParentEnd="true"
+            android:gravity="center_vertical|center_horizontal"
+            android:background="#ffffff"
+            android:textColor="#000000" />
+
+    </RelativeLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="23"
+        android:text="-Add Bill-"
+        android:textSize="17dp"
+        android:background="#eeeeee"
+        android:id="@+id/bAddBill" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="8">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:background="@drawable/card">
+            <TextView
+                android:id="@+id/tvNumber1"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="Bill number"
+                android:textSize="15dp"
+                android:gravity="center"
+                android:padding="10dp"/>
+
+            <TextView
+                android:id="@+id/tvDate1"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:text="7/7/2016"
+                android:textSize="20dp"
+                android:textColor="#000000"
+                android:layout_alignParentBottom="true"
+                android:paddingLeft="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="25000"
+                android:textSize="25dp"
+                android:textColor="#000000"
+                android:gravity="center"
+                android:layout_alignParentEnd="true"
+                android:paddingRight="25dp"/>
+        </RelativeLayout>
+
+    </LinearLayout>
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/tvRemainingAmount"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="23"
+        android:text="Remaining amount = 75000"
+        android:textSize="20dp"
+        android:textColor="#ffffff"
+        android:textAlignment="center"
+        android:gravity="center_vertical"
+        android:background="#000000" />
+
+</LinearLayout>
