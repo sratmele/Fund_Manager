@@ -153,9 +153,9 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
     public List<String> getBills(String fundName) {
         List<String> bills = new ArrayList<>();
-        String selectQuery = "SELECT * FROM "+TABLE_LABELS_BILLS+" WHERE "+KEY_FUND+" = "+fundName;
+        String selectQuery = "SELECT * FROM "+TABLE_LABELS_BILLS+" WHERE "+KEY_FUND+" = ?";
         SQLiteDatabase db = getReadableDatabase();
-        Cursor cursor = db.rawQuery(selectQuery,null);
+        Cursor cursor = db.rawQuery(selectQuery,new String[]{fundName});
         if (cursor.moveToFirst()){
             do {
                 bills.add(cursor.getString(0));
@@ -183,9 +183,9 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
     public List<String> getBillDates(String fundName) {
         List<String> dates = new ArrayList<>();
-        String selectQuery = "SELECT * FROM "+TABLE_LABELS_BILLS+" WHERE "+KEY_FUND+" = "+fundName;
+        String selectQuery = "SELECT * FROM "+TABLE_LABELS_BILLS+" WHERE "+KEY_FUND+" = ?";
         SQLiteDatabase db = getReadableDatabase();
-        Cursor cursor = db.rawQuery(selectQuery,null);
+        Cursor cursor = db.rawQuery(selectQuery,new String[]{fundName});
         if (cursor.moveToFirst()){
             do {
                 dates.add(cursor.getString(3));
