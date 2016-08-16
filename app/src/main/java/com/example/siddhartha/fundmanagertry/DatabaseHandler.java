@@ -2,8 +2,12 @@ package com.example.siddhartha.fundmanagertry;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class DatabaseHandler extends SQLiteOpenHelper {
 
@@ -68,5 +72,127 @@ public class DatabaseHandler extends SQLiteOpenHelper {
             return false;
         }
         return true;
+    }
+
+    public int getNumberOfFunds() {
+        int c = 0;
+        String selectQuery = "SELECT * FROM "+TABLE_LABELS_FUNDS;
+        SQLiteDatabase db = getReadableDatabase();
+        Cursor cursor = db.rawQuery(selectQuery,null);
+        if (cursor.moveToFirst()){
+            c++;
+            while (cursor.moveToNext()){
+                c++;
+            }
+        }
+        cursor.close();
+        db.close();
+        return c;
+    }
+
+    public int getNumberOfBills() {
+        int c = 0;
+        String selectQuery = "SELECT * FROM "+TABLE_LABELS_BILLS;
+        SQLiteDatabase db = getReadableDatabase();
+        Cursor cursor = db.rawQuery(selectQuery,null);
+        if (cursor.moveToFirst()){
+            c++;
+            while (cursor.moveToNext()){
+                c++;
+            }
+        }
+        cursor.close();
+        db.close();
+        return c;
+    }
+
+    public List<String> getFunds() {
+        List<String> funds = new ArrayList<>();
+        String selectQuery = "SELECT * FROM "+TABLE_LABELS_FUNDS;
+        SQLiteDatabase db = getReadableDatabase();
+        Cursor cursor = db.rawQuery(selectQuery,null);
+        if (cursor.moveToFirst()){
+            do {
+                funds.add(cursor.getString(0));
+            }while (cursor.moveToNext());
+        }
+        cursor.close();
+        db.close();
+        return funds;
+    }
+
+    public List<String> getFundAmounts() {
+        List<String> amounts = new ArrayList<>();
+        String selectQuery = "SELECT * FROM "+TABLE_LABELS_FUNDS;
+        SQLiteDatabase db = getReadableDatabase();
+        Cursor cursor = db.rawQuery(selectQuery,null);
+        if (cursor.moveToFirst()){
+            do {
+                amounts.add(cursor.getString(1));
+            }while (cursor.moveToNext());
+        }
+        cursor.close();
+        db.close();
+        return amounts;
+    }
+
+    public List<String> getFundDates() {
+        List<String> dates = new ArrayList<>();
+        String selectQuery = "SELECT * FROM "+TABLE_LABELS_FUNDS;
+        SQLiteDatabase db = getReadableDatabase();
+        Cursor cursor = db.rawQuery(selectQuery,null);
+        if (cursor.moveToFirst()){
+            do {
+                dates.add(cursor.getString(2));
+            }while (cursor.moveToNext());
+        }
+        cursor.close();
+        db.close();
+        return dates;
+    }
+
+    public List<String> getBills(String fundName) {
+        List<String> bills = new ArrayList<>();
+        String selectQuery = "SELECT * FROM "+TABLE_LABELS_BILLS+" WHERE "+KEY_FUND+" = "+fundName;
+        SQLiteDatabase db = getReadableDatabase();
+        Cursor cursor = db.rawQuery(selectQuery,null);
+        if (cursor.moveToFirst()){
+            do {
+                bills.add(cursor.getString(0));
+            }while (cursor.moveToNext());
+        }
+        cursor.close();
+        db.close();
+        return bills;
+    }
+
+    public List<String> getBillAmounts(String fundName) {
+        List<String> amounts = new ArrayList<>();
+        String selectQuery = "SELECT * FROM "+TABLE_LABELS_BILLS+" WHERE "+KEY_FUND+" = ?";
+        SQLiteDatabase db = getReadableDatabase();
+        Cursor cursor = db.rawQuery(selectQuery,new String[]{fundName});
+        if (cursor.moveToFirst()){
+            do {
+                amounts.add(cursor.getString(1));
+            }while (cursor.moveToNext());
+        }
+        cursor.close();
+        db.close();
+        return amounts;
+    }
+
+    public List<String> getBillDates(String fundName) {
+        List<String> dates = new ArrayList<>();
+        String selectQuery = "SELECT * FROM "+TABLE_LABELS_BILLS+" WHERE "+KEY_FUND+" = "+fundName;
+        SQLiteDatabase db = getReadableDatabase();
+        Cursor cursor = db.rawQuery(selectQuery,null);
+        if (cursor.moveToFirst()){
+            do {
+                dates.add(cursor.getString(3));
+            }while (cursor.moveToNext());
+        }
+        cursor.close();
+        db.close();
+        return dates;
     }
 }
